@@ -68,21 +68,42 @@ class BinaryTreeTest {
 //     / \                     ----->         / \
 //    1   3                                  1
     }
+
     @Test
-    void subSet(){
-        BinaryTree<Integer> t1=new BinaryTree<>();
+    void subSet() {
+        BinaryTree<Integer> t1 = new BinaryTree<>();
         t1.add(9);
         t1.add(10);
         t1.add(2);
         t1.add(3);
         t1.add(6);
         t1.add(15);
-        SortedSet<Integer> t1test=new TreeSet<>();
-        assertEquals(t1test,t1.subSet(2,2));
+        SortedSet<Integer> t1test = new TreeSet<>();
+        assertEquals(t1test, t1.subSet(2, 2));
         t1test.add(6);
-        assertEquals(t1test,t1.subSet(3,9));
+        assertEquals(t1test, t1.subSet(3, 9));
         t1test.add(9);
         t1test.add(10);
-        assertEquals(t1test,t1.subSet(3,15));
+        assertEquals(t1test, t1.subSet(3, 15));
+
+
+        BinaryTree<Integer> t2 = new BinaryTree<>();
+        t2.add(5);
+        t2.add(10);
+        t2.add(20);
+        t2.add(13);
+        t2.add(1);
+        t2.add(9);
+        t2.add(4);
+        t2.add(11);
+        SortedSet<Integer> t2test = new TreeSet<>();
+        assertEquals(t2test, t2.subSet(9, 9));
+        t2test.add(5);
+        assertEquals(t2test, t2.subSet(4, 9));
+        t2test.add(9);
+        t2test.add(10);
+        t2test.add(13);
+        t2test.add(11);
+        assertEquals(t2test, t2.subSet(4, 20));
     }
 }
